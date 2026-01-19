@@ -123,3 +123,5 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, STATIC_URL),
 ]
+
+API_URL = 'https://leaxmus.pythonanywhere.com/landing/?format=json'
