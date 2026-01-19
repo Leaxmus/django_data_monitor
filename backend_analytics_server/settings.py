@@ -26,7 +26,9 @@ SECRET_KEY = "django-insecure-sxiy8t^vl4djxnvy)2efu-0-h2rv@pe%)-_k4@qa9v8bw$d9&6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+  "*",
+]
 
 
 # Application definition
@@ -125,3 +127,15 @@ STATICFILES_DIRS = [
 ]
 
 API_URL = 'https://leaxmus.pythonanywhere.com/landing/?format=json'
+
+CSRF_TRUSTED_ORIGINS = [
+  "https://*.app.github.dev", # Solo si utiliza Codespaces
+  "https://localhost:8000",
+  "http://127.0.0.1:8000"
+]
+
+# Fallo: acceso sin autenticación
+LOGIN_URL = '/login/'
+
+# Éxito: luego de autenticación exitosa
+LOGIN_REDIRECT_URL = '/'
